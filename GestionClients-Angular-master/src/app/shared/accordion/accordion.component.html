@@ -1,0 +1,11 @@
+<cdk-accordion class="d-flex flex-column justify-content-center" style="margin-bottom: 5%;">
+    <cdk-accordion-item *ngFor="let item of items; let index = index;" #accordionItem="cdkAccordionItem" class="example-accordion" role="button" tabindex="0" [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index"
+        style="margin-top: 10%; width: 90%; margin-left: 5%; flood-opacity: 1;">
+        <button mat-raised-button color="primary" (click)="accordionItem.toggle()">
+        {{ item.itemName | uppercase}}
+    </button>
+        <button mat-stroked-button style="background-color: coral; color: aliceblue;" *ngFor="let crud of items[index].crudTypes; let index" role="region" [style.display]="accordionItem.expanded ? '' : 'none'" [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+        <div routerLink="/{{crud.route}}">{{crud.crudName | uppercase}}</div>
+    </button>
+    </cdk-accordion-item>
+</cdk-accordion>

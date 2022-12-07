@@ -1,0 +1,13 @@
+<form>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> Old Name</mat-label>
+        <input disabled matInput placeholder="clientName" required type="text" [(ngModel)]="oldRegion.region_name" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> New Name</mat-label>
+        <input matInput placeholder="clientName" required type="text" [(ngModel)]="newRegion.region_name" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <button mat-raised-button class=" btn-grad " type="submit " value="submit " (click)="updateRegion() ">confrim</button>
+</form>

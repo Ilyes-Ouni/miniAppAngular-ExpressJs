@@ -1,0 +1,54 @@
+<div style="margin-top: 2%;">
+    <mat-form-field appearance="fill">
+        <mat-label>-- Region --</mat-label>
+        <select matNativeControl required [(ngModel)]="regionID" [ngModelOptions]="{standalone: true}" (change)="filterClients()">
+  <label></label>
+  <option *ngFor="let region of regions" [value]="region.regionid">{{region.region_name}}</option>
+</select>
+    </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Position Column  -->
+        <ng-container matColumnDef="clientID">
+            <th mat-header-cell *matHeaderCellDef> ClientID </th>
+            <td mat-cell *matCellDef="let element"> {{element.clientID}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nomClient">
+            <th mat-header-cell *matHeaderCellDef> Full Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.nom_client}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="region">
+            <th mat-header-cell *matHeaderCellDef> region </th>
+            <td mat-cell *matCellDef="let element"> {{element.region_name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell *matHeaderCellDef> phoneNumber </th>
+            <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateNaissance">
+            <th mat-header-cell *matHeaderCellDef> dateNaissance </th>
+            <td mat-cell *matCellDef="let element"> {{element.date_naissance | date : 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateCreation">
+            <th mat-header-cell *matHeaderCellDef> dateCreation </th>
+            <td mat-cell *matCellDef="let element"> {{element.date_creation | date : 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <!-- aria-label="Select page" [pageSize]="10" [length]="lengthTable" -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator pageSize="14" showFirstLastButtons>
+    </mat-paginator>
+</div>

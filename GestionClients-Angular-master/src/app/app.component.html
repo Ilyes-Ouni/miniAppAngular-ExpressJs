@@ -1,0 +1,19 @@
+<mat-drawer-container [hasBackdrop]="!logInUrl">
+    <mat-drawer #drawer mode="over" style="background:url({{background}});">
+        <div *ngIf="!logInUrl">
+            <side-header-menu></side-header-menu>
+            <app-accordion></app-accordion>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <mat-toolbar class="toolbar" color="warn" *ngIf="!logInUrl">
+            OUNI
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+            <header-menu style="margin-left: 80%;"></header-menu>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

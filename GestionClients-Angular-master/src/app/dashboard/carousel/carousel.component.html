@@ -1,0 +1,11 @@
+<ngb-carousel class="col-12  d-flex justify-content-center">
+    <ng-template ngbSlide *ngFor="let index of images">
+        <div class="picsum-img-wrapper" class="imageDiv">
+            <img [src]="index.path" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption">
+            <h3 style="font-style: oblique;"><strong>{{index.city}}</strong></h3>
+            <p>Description</p>
+        </div>
+    </ng-template>
+</ngb-carousel>

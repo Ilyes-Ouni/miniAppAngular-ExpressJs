@@ -1,0 +1,20 @@
+<div [matMenuTriggerFor]="menu" style="margin-left:85%">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <!--<mat-icon>supervised_user_circle</mat-icon>-->
+</button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item class="align-items">
+  <span class="material-icons" style="margin-right: 10%;">settings</span>
+  Settings
+</button>
+
+        <button mat-menu-item class="align-items" routerLink="/login" (click)="logout()">
+  <span class="material-icons" style="margin-right: 10%;">logout</span>
+  Logout
+</button>
+    </mat-menu>
+    {{username}}
+    <img mat-card-md-image src="{{this.url+'/images/'+ userImage}}" style="width: 40px;height: 40px; border-radius:50%">
+</div>

@@ -1,0 +1,13 @@
+ngb-carousel {
+    background-color: rgb(69, 69, 69);
+}
+
+img {
+    width: 80%;
+    height: 700px;
+    margin-left: 10%;
+}
+
+.imageDiv {
+    height: 700px;
+}

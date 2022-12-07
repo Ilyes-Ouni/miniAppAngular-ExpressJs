@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center" style="margin-top: 2%;">
+    <form class="example-form">
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Name</mat-label>
+                <input matInput placeholder="clientName" required type="text" [(ngModel)]="client.nom_client" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>-- Region --</mat-label>
+                <select matNativeControl required [(ngModel)]="updatedRegionID" [ngModelOptions]="{standalone: true}">
+              <label></label>
+              <option *ngFor="let region of regions" [value]="region.regionid">{{region.region_name}}</option>
+            </select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Phone Number</mat-label>
+                <input matInput placeholder="phoneNumber" required type="number" [(ngModel)]="client.phone_number" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> Email</mat-label>
+                <input matInput placeholder="pat@exemple.com" type="email" required [(ngModel)]="client.email" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> date Naissance</mat-label>
+                <input matInput placeholder="dateNaissance" required type="date" [(ngModel)]="client.date_naissance" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+
+            <button mat-raised-button class=" btn-grad " type="submit " value="submit " (click)="updateClient() ">confrim</button>
+        </div>
+    </form>
+</div>
